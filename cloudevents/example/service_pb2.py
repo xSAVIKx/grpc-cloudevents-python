@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from io.cloudevents.v1 import cloudevents_pb2 as io_dot_cloudevents_dot_v1_dot_cloudevents__pb2
+from cloudevents.v1 import cloudevents_pb2 as io_dot_cloudevents_dot_v1_dot_cloudevents__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$io/cloudevents/example/service.proto\x12\x16io.cloudevents.example\x1a#io/cloudevents/v1/cloudevents.proto2R\n\x07Greeter\x12G\n\x05hello\x12\x1d.io.cloudevents.v1.CloudEvent\x1a\x1d.io.cloudevents.v1.CloudEvent\"\x00\x42\xa4\x01\n\x1cio.cloudevents.example.protoP\x01Z\x1f\x63loudevents.io/genproto/example\xaa\x02\x1f\x43loudNative.CloudEvents.Example\xca\x02\x1cIo\\CloudEvents\\Example\\Proto\xea\x02\x1fIo::CloudEvents::Example::Protob\x06proto3')
