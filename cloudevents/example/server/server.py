@@ -12,17 +12,20 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
-"""The Python implementation of the GRPC helloworld.Greeter server."""
-
+import logging
 import uuid
+from logging import Logger
 
 from cloudevents.example import service_pb2_grpc
 from cloudevents.v1 import cloudevents_pb2
+
+LOGGER: Logger = logging.getLogger(__name__)
 
 
 class Greeter(service_pb2_grpc.GreeterServicer):
 
     def hello(self, request, context):
+        LOGGER.debug(f"Received request: {request}")
         event_id = str(uuid.uuid4())
         return cloudevents_pb2.CloudEvent(
             id=event_id,
@@ -31,4 +34,3 @@ class Greeter(service_pb2_grpc.GreeterServicer):
             spec_version="1.0.0",
             text_data="pong",
         )
-

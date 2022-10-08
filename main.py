@@ -21,9 +21,12 @@ from cloudevents.example import service_pb2_grpc, server
 
 
 def serve():
+    logger: logging.Logger = logging.getLogger(__name__)
+    address: str = "127.0.0.1:52051"
+    logger.info(f"Starting gRPC server at {address}")
     grpc_server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     service_pb2_grpc.add_GreeterServicer_to_server(server.Greeter(), grpc_server)
-    grpc_server.add_insecure_port('127.0.0.1:52051')
+    grpc_server.add_insecure_port(address)
     grpc_server.start()
     grpc_server.wait_for_termination()
 
