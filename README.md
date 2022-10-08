@@ -12,3 +12,9 @@ python -m grpc_tools.protoc -I./protos --python_out=. --grpc_python_out=. ./prot
 
 When the protos are created, please move them manually out of the `io` folder while this
 messes up a lot with Python standard `io` library.
+
+# Java Server
+
+The Java gRPC Server counterpart of this repository is available [here][grpc-cloudevents-java].
+
+[grpc-cloudevents-java]: https://github.com/xSAVIKx/grpc-cloudevents-java
